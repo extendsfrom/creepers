@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="creeper.dao.HouseDao">
+    <!-- 添加用户 --> 
+    <insert id="insertHouse" parameterType="House" >
+    	<selectKey resultType="java.lang.String" order="BEFORE" keyProperty="cid">  
+	        SELECT SUPER_HOUSE_SEQ.NEXTVAL AS cid FROM DUAL  
+	    </selectKey>
+    	INSERT INTO HOUSE_INFO (
+    		CID, 
+    		IPRICE, 
+    		CHOUSE_STYLE, 
+    		CTOWARD, 
+    		CFLOOR, 
+    		CADDRESS, 
+    		CPLOT_ID, 
+    		CHOUSE_TYPE, 
+    		IHOUSE_SPACE, 
+    		CBUILD_YEAR, 
+    		CNEAR_SCHOOL_ID, 
+    		CNEAR_SCHOOL_DESC, 
+    		CNEAR_SUBWAY_ID, 
+    		CNEAR_SUBWAY_DESC, 
+    		CTAXFREE, 
+    		CISUNIQUE, 
+    		CHOUSE_NAME,
+    		CREATE_TIME
+    	)
+    	VALUES (
+    		#{cid,jdbcType=VARCHAR},
+    		#{iPrice,jdbcType=NUMERIC},
+    		#{cHouseStyle,jdbcType=VARCHAR},
+    		#{cToward,jdbcType=VARCHAR},
+    		#{cFloor,jdbcType=VARCHAR},
+    		#{cAddress,jdbcType=VARCHAR},
+    		#{cPlotId,jdbcType=VARCHAR},
+    		#{cHouseType,jdbcType=VARCHAR},
+    		#{iHouseSpace,jdbcType=NUMERIC},
+    		#{cBuildYear,jdbcType=VARCHAR},
+    		#{cNearSchoolId,jdbcType=VARCHAR},
+    		#{cNearSchoolDesc,jdbcType=VARCHAR},
+    		#{cNearSubwayId,jdbcType=VARCHAR},
+    		#{cNearSubwayDesc,jdbcType=VARCHAR},
+    		#{cTaxFree,jdbcType=VARCHAR},
+    		#{cIsUnique,jdbcType=VARCHAR},
+    		#{cHouseName,jdbcType=VARCHAR},   		
+    		#{createTime,jdbcType=DATE}
+    	)
+    </insert>
+    
+</mapper>

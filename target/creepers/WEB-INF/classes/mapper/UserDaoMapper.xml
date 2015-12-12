@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="creeper.dao.UserDao">
+    <!-- 添加用户 --> 
+    <insert id="insertUser" parameterType="User" >
+        insert into user_info(user_id, user_name, password) values(SUPER_HOUSE_SEQ.NEXTVAL,#{username}, #{password})
+    </insert>
+    
+</mapper>

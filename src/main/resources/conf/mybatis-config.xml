@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+         <typeAlias alias="User" type="creeper.model.User"/>
+         <typeAlias alias="House" type="creeper.model.House"/>
+         <typeAlias alias="Plot" type="creeper.model.Plot"/>
+         <typeAlias alias="HousePic" type="creeper.model.HousePic"/>
+         <typeAlias alias="HouseInternet" type="creeper.model.HouseInternet"/>
+    </typeAliases>
+</configuration>

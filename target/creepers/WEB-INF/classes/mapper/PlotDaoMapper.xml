@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="creeper.dao.PlotDao">
+    <!-- 添加小区--> 
+    <insert id="insertPlot" parameterType="Plot" >
+    	<selectKey resultType="java.lang.String" order="BEFORE" keyProperty="cid">  
+	        SELECT SUPER_PLOT_SEQ.NEXTVAL AS cid FROM DUAL  
+	    </selectKey> 
+    	INSERT INTO PLOT_INFO (CID, CPLOT_NAME)
+    	VALUES (
+    		#{cid} ,
+    		#{cPlotName}  		
+    	)
+    </insert>
+    
+</mapper>
